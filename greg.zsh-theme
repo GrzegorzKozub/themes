@@ -18,8 +18,8 @@ user=%{%(!.$fg[red].$fg[green])%}%n%{$reset_color%}
 host=%{$fg[yellow]%}%m%{$reset_color%}
 dir=%{$fg[cyan]%}%3~%{$reset_color%}
 
-at=%{$fg[grey]%}@%{$reset_color%}
-input=%{$fg[grey]%}\>%{$reset_color%}
+at=%F{10}@%{$reset_color%}
+input=%F{10}\>%{$reset_color%}
 
 local function git_prompt() {
   if [[ "$(< /proc/version)" == *@(Microsoft|WSL)* ]]; then return; fi
