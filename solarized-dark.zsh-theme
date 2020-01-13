@@ -6,13 +6,19 @@ ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg[yellow]%}"
 ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX=" %{$fg[red]%}↓"
 ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %{$fg[green]%}↑"
 
-# https://github.com/softmoth/zsh-vim-mode
+# zsh-vim-mode
 MODE_INDICATOR_VIINS="%F{4}INSERT%{$reset_color%}"
 MODE_INDICATOR_VICMD="%F{10}NORMAL%{$reset_color%}"
 MODE_INDICATOR_REPLACE="%F{9}REPLACE%{$reset_color%}"
 MODE_INDICATOR_SEARCH="%F{13}SEARCH%{$reset_color%}"
 MODE_INDICATOR_VISUAL="%F{2}VISUAL%{$reset_color%}"
 MODE_INDICATOR_VLINE="%F{2}VSUAL LINE%{$reset_color%}"
+
+# fzf
+FZF_DEFAULT_OPTS='
+  --color dark,bg+:-1,fg:10,fg+:14,hl:13,hl+:13
+  --color spinner:8,info:8,prompt:10,pointer:14,marker:14
+'
 
 user=%{%(!.$fg[red].$fg[green])%}%n%{$reset_color%}
 host=%{$fg[yellow]%}%m%{$reset_color%}
@@ -35,7 +41,7 @@ local function git_branch() {
 local function git_commits() {
   remote=${$(command git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
   if [[ -n ${remote} ]]; then
-    echo ""$(git_commits_behind)$(git_commits_ahead)
+    echo "$(git_commits_behind)$(git_commits_ahead)"
   fi
 }
 
@@ -65,7 +71,7 @@ local function git_changes() {
     fi
   done
 
-  changes=""
+  changes=''
 
   if [[ $stagedAdded != 0 || $stagedModified != 0 || $stagedDeleted != 0 ]]; then
     changes=" %{$fg[green]%}+$stagedAdded ~$stagedModified -$stagedDeleted"
