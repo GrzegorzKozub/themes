@@ -1,46 +1,47 @@
-ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="%{$fg[blue]%}"
-ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg[yellow]%}"
-
-ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX=" %{$fg[red]%}↓"
-ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %{$fg[green]%}↑"
+# git
+ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="%F{4}"
+ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%F{1}"
+ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%F{2}"
+ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%F{3}"
+ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX=" %F{1}"
+ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %F{2}"
 
 # zsh-vim-mode
-MODE_INDICATOR_VIINS="%F{4}INSERT%{$reset_color%}"
-MODE_INDICATOR_VICMD="%F{10}NORMAL%{$reset_color%}"
-MODE_INDICATOR_REPLACE="%F{9}REPLACE%{$reset_color%}"
-MODE_INDICATOR_SEARCH="%F{13}SEARCH%{$reset_color%}"
-MODE_INDICATOR_VISUAL="%F{2}VISUAL%{$reset_color%}"
-MODE_INDICATOR_VLINE="%F{2}VSUAL LINE%{$reset_color%}"
+MODE_INDICATOR_VIINS="%K{4} I %F{4}"
+MODE_INDICATOR_VICMD="%K{11} N %F{11}"
+MODE_INDICATOR_REPLACE="%K{9} R %F{9}"
+MODE_INDICATOR_SEARCH="%K{13} S %F{13}"
+MODE_INDICATOR_VISUAL="%K{2} V %F{2}"
+MODE_INDICATOR_VLINE="%K{2} L %F{2}"
 
 # fzf
 FZF_DEFAULT_OPTS='
   --color dark,bg+:-1,fg:10,fg+:14,hl:13,hl+:13
   --color spinner:8,info:8,prompt:10,pointer:14,marker:14
+  --layout reverse-list
+  --margin 10%,0,0,0
+  --no-info
+  --prompt " "
+  --tabstop 2
 '
 
-user=%{%(!.$fg[red].$fg[green])%}%n%{$reset_color%}
-host=%{$fg[yellow]%}%m%{$reset_color%}
-dir=%{$fg[cyan]%}%3~%{$reset_color%}
-
-at=%F{10}@%{$reset_color%}
-input=%F{10}\>%{$reset_color%}
+local function current_dir() { 
+  echo %F{6}%3~
+}
 
 local function git_prompt() {
   if [[ "$(< /proc/version)" == *@(Microsoft|WSL)* ]]; then return; fi
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    echo $(git_branch)$(git_commits)$(git_changes)%{$reset_color%}
+    echo "$(git_branch)$(git_commits)$(git_changes)"
   fi
 }
 
 local function git_branch() {
-  echo %{$fg[blue]%}$(git_remote_status)$(git_current_branch)
+  echo "$(git_remote_status)$(git_current_branch)"
 }
 
 local function git_commits() {
-  remote=${$(command git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
-  if [[ -n ${remote} ]]; then
+  if [[ -n ${$(command git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/} ]]; then
     echo "$(git_commits_behind)$(git_commits_ahead)"
   fi
 }
@@ -48,13 +49,8 @@ local function git_commits() {
 local function git_changes() {
   IFS=''
 
-  stagedAdded=0
-  stagedModified=0
-  stagedDeleted=0
-
-  unstagedAdded=0
-  unstagedModified=0
-  unstagedDeleted=0
+  local stagedAdded=0 stagedModified=0 stagedDeleted=0
+  local unstagedAdded=0 unstagedModified=0 unstagedDeleted=0
 
   git -c color.status=false status --short | while read line
   do
@@ -71,7 +67,7 @@ local function git_changes() {
     fi
   done
 
-  changes=''
+  local changes=''
 
   if [[ $stagedAdded != 0 || $stagedModified != 0 || $stagedDeleted != 0 ]]; then
     changes=" %{$fg[green]%}+$stagedAdded ~$stagedModified -$stagedDeleted"
@@ -84,6 +80,15 @@ local function git_changes() {
   echo $changes
 }
 
-PROMPT='${user}${at}${host} ${dir} $(git_prompt)
-${input} '
+local function vim_mode() {
+  echo %F{8}${MODE_INDICATOR_PROMPT}%K{8}%{$reset_color%}
+}
 
+local function flags() {
+  echo "%(?..%F{1} )""%(!.%F{9} .)""%(1j.%F{3} .)"%{$reset_color%}
+  #echo "%(?..%F{1}%F{8}%K{1}  )""%(!.%F{9}%F{8}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
+}
+
+PROMPT='$(current_dir) $(git_prompt)
+$(vim_mode) '
+RPS1='$(flags)'
