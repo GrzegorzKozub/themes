@@ -37,7 +37,7 @@ local function git_prompt() {
 }
 
 local function git_branch() {
-  echo "$(git_remote_status)$(git_current_branch)"
+  echo "%F{3}$(git_remote_status)$(git_current_branch)"
 }
 
 local function git_commits() {
