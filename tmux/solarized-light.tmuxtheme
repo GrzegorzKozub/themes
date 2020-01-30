@@ -23,25 +23,25 @@ set -g @batt_color_status_primary_charged 'colour4'
 
 # tmux
 
-set -g pane-border-style fg=colour0
-set -g pane-active-border-style fg=colour0
+set -g pane-border-style fg=colour7
+set -g pane-active-border-style fg=colour7
 
 set -g display-panes-colour default
 set -g display-panes-active-colour colour9
 
-setw -g window-status-style fg=colour10,bg=default
-setw -g window-status-current-style fg=colour14,bg=default
+setw -g window-status-style fg=colour14,bg=default
+setw -g window-status-current-style fg=colour10,bg=default
 setw -g window-status-format "#I:#W"
 setw -g window-status-current-format "#I:#W"
 setw -g window-status-separator " "
 
-set -g status-style fg=colour10,bg=default
+set -g status-style fg=colour14,bg=default
 set -g status-left-length 64
-set -g status-left "#[fg=colour8,#{?client_prefix,bg=colour9,bg=colour11}] #S #[#{?client_prefix,fg=colour9,fg=colour11},bg=colour10]#[fg=colour8,bg=colour10] #I:#P #[fg=colour10,bg=default] "
+set -g status-left "#[fg=colour15,#{?client_prefix,bg=colour9,bg=colour12}] #S #[#{?client_prefix,fg=colour9,fg=colour12},bg=colour14]#[fg=colour15,bg=colour14] #I:#P #[fg=colour14,bg=default] "
 set -g status-right-length 24
-set -g status-right "#[fg=colour10,bg=default] #[fg=colour8,bg=colour10] %e %b  %H:%M #{battery_color_fg}#[bg=colour10]#{battery_color_bg}#[fg=colour8] #{battery_icon_charge} "
+set -g status-right "#[fg=colour14,bg=default] #[fg=colour15,bg=colour14] %e %b  %H:%M #{battery_color_fg}#[bg=colour14]#{battery_color_bg}#[fg=colour15] #{battery_icon_charge} "
 
-set -g message-style fg=colour14,bg=default
-set -g message-command-style fg=colour10,bg=default
+set -g message-style fg=colour10,bg=default
+set -g message-command-style fg=colour14,bg=default
 
-set -g mode-style fg=colour14,bg=colour0
+set -g mode-style fg=colour10,bg=colour7
