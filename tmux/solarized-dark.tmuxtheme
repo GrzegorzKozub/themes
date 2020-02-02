@@ -27,7 +27,7 @@ set -g pane-border-style fg=colour0
 set -g pane-active-border-style fg=colour0
 
 set -g display-panes-colour default
-set -g display-panes-active-colour colour9
+set -g display-panes-active-colour colour13
 
 setw -g window-status-style fg=colour10,bg=default
 setw -g window-status-current-style fg=colour14,bg=default
@@ -37,7 +37,7 @@ setw -g window-status-separator " "
 
 set -g status-style fg=colour10,bg=default
 set -g status-left-length 64
-set -g status-left "#[fg=colour8,#{?client_prefix,bg=colour9,bg=colour11}] #S #[#{?client_prefix,fg=colour9,fg=colour11},bg=colour10]#[fg=colour8,bg=colour10] #I:#P #[fg=colour10,bg=default] "
+set -g status-left "#[fg=colour8,#{?client_prefix,bg=colour13,bg=colour11}] #S #[#{?client_prefix,fg=colour13,fg=colour11},bg=colour10]#[fg=colour8,bg=colour10] #I:#P #[fg=colour10,bg=default] "
 set -g status-right-length 24
 set -g status-right "#[fg=colour10,bg=default] #[fg=colour8,bg=colour10] %e %b  %H:%M #{battery_color_fg}#[bg=colour10]#{battery_color_bg}#[fg=colour8] #{battery_icon_charge} "
 
