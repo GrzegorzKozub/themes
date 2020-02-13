@@ -1,3 +1,13 @@
+if [[ $TERM_PROGRAM == 'vscode' ]]; then
+  BLACK=0
+  GRAY=8
+  SILVER=-1
+else
+  BLACK=8
+  GRAY=10
+  SILVER=14
+fi
+
 # git
 ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="%F{4}"
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%F{1}"
@@ -15,15 +25,15 @@ MODE_INDICATOR_VISUAL="%K{2} V %F{2}"
 MODE_INDICATOR_VLINE="%K{2} L %F{2}"
 
 # fzf
-FZF_DEFAULT_OPTS='
-  --color dark,bg+:-1,fg:10,fg+:14,hl:13,hl+:13
-  --color spinner:8,info:8,prompt:10,pointer:14,marker:14
+FZF_DEFAULT_OPTS="
+  --color dark,bg+:-1,fg:$GRAY,fg+:$SILVER,hl:13,hl+:13
+  --color spinner:$BLACK,info:$BLACK,prompt:$GRAY,pointer:$SILVER,marker:$SILVER
   --layout reverse-list
   --margin 10%,0,0,0
   --no-info
-  --prompt " "
+  --prompt ' '
   --tabstop 2
-'
+"
 
 local function current_dir() { 
   echo %F{6}%3~
@@ -81,12 +91,12 @@ local function git_changes() {
 }
 
 local function vim_mode() {
-  echo %F{8}${MODE_INDICATOR_PROMPT}%K{8}%{$reset_color%}
+  echo %F{$BLACK}${MODE_INDICATOR_PROMPT}%K{$BLACK}%{$reset_color%}
 }
 
 local function flags() {
   echo "%(?..%F{1} )""%(!.%F{9} .)""%(1j.%F{3} .)"%{$reset_color%}
-  #echo "%(?..%F{1}%F{8}%K{1}  )""%(!.%F{9}%F{8}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
+  #echo "%(?..%F{1}%F{$BLACK}%K{1}  )""%(!.%F{9}%F{BLACK}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
 }
 
 PROMPT='$(current_dir) $(git_prompt)
