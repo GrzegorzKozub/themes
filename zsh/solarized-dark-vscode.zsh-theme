@@ -3,8 +3,8 @@ ZSH_THEME_GIT_PROMPT_EQUAL_REMOTE="%F{4}"
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%F{1}"
 ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%F{2}"
 ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%F{3}"
-ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX=" %F{1}"
-ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %F{2}"
+ZSH_THEME_GIT_COMMITS_BEHIND_PREFIX=" %F{1}↓"
+ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %F{2}↑"
 
 # zsh-vim-mode
 MODE_INDICATOR_VIINS="%K{4} I %F{4}"
@@ -85,8 +85,8 @@ local function vim_mode() {
 }
 
 local function flags() {
-  echo "%(?..%F{1} )""%(!.%F{9} .)""%(1j.%F{3} .)"%{$reset_color%}
-  #echo "%(?..%F{1}%F{0}%K{1}  )""%(!.%F{9}%F{BLACK}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
+  echo "%(?..%F{1} ●)""%(!.%F{9} ▲.)""%(1j.%F{3} ◆.)"%{$reset_color%}
+  #echo "%(?..%F{1}%F{0}%K{1} ● )""%(!.%F{9}%F{BLACK}%K{9} ▲ .)""%(1j.%F{3}%F{8}%K{3} ◆ .)"%{$reset_color%}
 }
 
 PROMPT='$(current_dir) $(git_prompt)
