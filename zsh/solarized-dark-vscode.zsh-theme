@@ -16,8 +16,8 @@ MODE_INDICATOR_VLINE="%K{2} L %F{2}"
 
 # fzf
 FZF_DEFAULT_OPTS="
-  --color dark,bg+:-1,fg:10,fg+:14,hl:13,hl+:13
-  --color spinner:8,info:8,prompt:10,pointer:14,marker:14
+  --color dark,bg+:-1,fg:8,fg+:-1,hl:13,hl+:13
+  --color spinner:0,info:0,prompt:8,pointer:-1,marker:-1
   --layout reverse-list
   --margin 10%,0,0,0
   --no-info
@@ -81,12 +81,12 @@ local function git_changes() {
 }
 
 local function vim_mode() {
-  echo %F{8}${MODE_INDICATOR_PROMPT}%K{8}%{$reset_color%}
+  echo %F{0}${MODE_INDICATOR_PROMPT}%K{0}%{$reset_color%}
 }
 
 local function flags() {
   echo "%(?..%F{1} )""%(!.%F{9} .)""%(1j.%F{3} .)"%{$reset_color%}
-  #echo "%(?..%F{1}%F{8}%K{1}  )""%(!.%F{9}%F{BLACK}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
+  #echo "%(?..%F{1}%F{0}%K{1}  )""%(!.%F{9}%F{BLACK}%K{9}  .)""%(1j.%F{3}%F{8}%K{3}  .)"%{$reset_color%}
 }
 
 PROMPT='$(current_dir) $(git_prompt)
