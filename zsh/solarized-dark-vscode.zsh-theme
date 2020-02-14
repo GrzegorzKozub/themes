@@ -8,7 +8,7 @@ ZSH_THEME_GIT_COMMITS_AHEAD_PREFIX=" %F{2}↑"
 
 # zsh-vim-mode
 MODE_INDICATOR_VIINS="%K{4} I %F{4}"
-MODE_INDICATOR_VICMD="%K{12} N %F{12}"
+MODE_INDICATOR_VICMD="%K{8} N %F{8}"
 MODE_INDICATOR_REPLACE="%K{9} R %F{9}"
 MODE_INDICATOR_SEARCH="%K{13} S %F{13}"
 MODE_INDICATOR_VISUAL="%K{2} V %F{2}"
@@ -80,15 +80,11 @@ local function git_changes() {
   echo $changes
 }
 
-local function vim_mode() {
-  echo %F{0}${MODE_INDICATOR_PROMPT}%K{0}%{$reset_color%}
-}
-
-local function flags() {
-  echo "%(?..%F{1} ●)""%(!.%F{9} ▲.)""%(1j.%F{3} ◆.)"%{$reset_color%}
-  #echo "%(?..%F{1}%F{0}%K{1} ● )""%(!.%F{9}%F{BLACK}%K{9} ▲ .)""%(1j.%F{3}%F{8}%K{3} ◆ .)"%{$reset_color%}
+local function vim_mode_and_flags() {
+  echo %F{0}${MODE_INDICATOR_PROMPT}"%(1j.%K{3}.%(?.%K{0}.%K{1}))"%{$reset_color%}"%(?..%(1j.%K{1}.))""%(1j.%F{3}.%(?..%F{1}))"%{$reset_color%}"%(?..%(1j.%F{1}.))"%{$reset_color%}
 }
 
 PROMPT='$(current_dir) $(git_prompt)
-$(vim_mode) '
-RPS1='$(flags)'
+$(vim_mode_and_flags) '
+
+RPS1=''
