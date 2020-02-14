@@ -26,7 +26,7 @@ set -g @batt_color_status_primary_charged 'colour4'
 set -g pane-border-style fg=colour0
 set -g pane-active-border-style fg=colour0
 
-set -g display-panes-colour default
+set -g display-panes-colour colour0
 set -g display-panes-active-colour colour13
 
 setw -g window-status-style fg=colour10,bg=default
