@@ -84,7 +84,11 @@ local function vim_mode_and_flags() {
   echo %F{0}${MODE_INDICATOR_PROMPT}"%(1j.%K{3}.%(?.%K{0}.%K{1}))"%{$reset_color%}"%(?..%(1j.%K{1}.))""%(1j.%F{3}.%(?..%F{1}))"%{$reset_color%}"%(?..%(1j.%F{1}.))"%{$reset_color%}
 }
 
+local function reset() {
+  echo %F{-1}%K{0}
+}
+
 PROMPT='$(current_dir) $(git_prompt)
-$(vim_mode_and_flags) '
+$(vim_mode_and_flags)$(reset) '
 
 RPS1=''
