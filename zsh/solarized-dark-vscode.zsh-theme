@@ -20,6 +20,7 @@ FZF_DEFAULT_OPTS="
   --color spinner:0,info:0,prompt:8,pointer:-1,marker:-1
   --layout reverse-list
   --margin 10%,0,0,0
+  --no-bold
   --no-info
   --prompt ' '
   --tabstop 2
