@@ -31,7 +31,6 @@ local function current_dir() {
 }
 
 local function git_prompt() {
-  if [[ "$(< /proc/version)" == *@(Microsoft|WSL)* ]]; then return; fi
   if git rev-parse --git-dir > /dev/null 2>&1; then
     echo "$(git_branch)$(git_commits)$(git_changes)"
   fi
