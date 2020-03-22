@@ -54,7 +54,7 @@ local function git_changes() {
 
   git -c color.status=false status --short | while read line
   do
-    if [[ $line =~ '^(\w|\?|\s)(\w|\?|\s).+$' ]]; then
+    if [[ $line =~ '^([ACDMR]|\?|\ )([ACDMR]|\?|\ ).+$' ]]; then
 
       [[ $match[1] == 'A' ]] && stagedAdded=$((stagedAdded + 1))
       [[ $match[1] == 'M' || $match[1] == 'R' || $match[1] == 'C' ]] && stagedModified=$((stagedModified + 1))
