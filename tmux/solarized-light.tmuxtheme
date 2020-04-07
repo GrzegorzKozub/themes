@@ -1,28 +1,3 @@
-# tmux-battery
-
-set -g @batt_icon_charge_tier8 ''
-set -g @batt_icon_charge_tier7 ''
-set -g @batt_icon_charge_tier6 ''
-set -g @batt_icon_charge_tier5 ''
-set -g @batt_icon_charge_tier4 ''
-set -g @batt_icon_charge_tier3 ''
-set -g @batt_icon_charge_tier2 ''
-set -g @batt_icon_charge_tier1 ''
-
-set -g @batt_color_charge_primary_tier8 'colour12'
-set -g @batt_color_charge_primary_tier7 'colour12'
-set -g @batt_color_charge_primary_tier6 'colour12'
-set -g @batt_color_charge_primary_tier5 'colour12'
-set -g @batt_color_charge_primary_tier4 'colour3'
-set -g @batt_color_charge_primary_tier3 'colour3'
-set -g @batt_color_charge_primary_tier2 'colour1'
-set -g @batt_color_charge_primary_tier1 'colour1'
-
-set -g @batt_color_status_primary_charging 'colour4'
-set -g @batt_color_status_primary_charged 'colour4'
-
-# tmux
-
 set -g pane-border-style fg=colour7
 set -g pane-active-border-style fg=colour7
 
@@ -40,7 +15,6 @@ set -g status-left-length 64
 set -g status-left "#[fg=colour15,#{?client_prefix,bg=colour13,bg=colour12}] #S #[#{?client_prefix,fg=colour13,fg=colour12},bg=colour14]#[fg=colour15,bg=colour14] #I:#P #[fg=colour14,bg=default] "
 set -g status-right-length 24
 
-# set -g status-right "#[fg=colour14,bg=default] #[fg=colour15,bg=colour14] %e %b  %H:%M #{battery_color_fg}#[bg=colour14]#{battery_color_bg}#[fg=colour15] #{battery_icon_charge} "
 set -g status-right "#[fg=colour14,bg=default] #[fg=colour15,bg=colour14] %e %b #[fg=colour12]#[fg=colour15,bg=colour12] %H:%M "
 
 set -g message-style fg=colour10,bg=default
