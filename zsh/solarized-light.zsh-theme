@@ -15,20 +15,20 @@ MODE_INDICATOR_VISUAL="%K{2} V %F{2}"
 MODE_INDICATOR_VLINE="%K{2} L %F{2}"
 
 # fzf
-FZF_DEFAULT_OPTS='
+FZF_DEFAULT_OPTS="
   --color dark,bg+:-1,fg:14,fg+:10,hl:13,hl+:13
-  --color spinner:15,info:15,prompt:14,pointer:10,marker:10
+  --color spinner:15,info:15,prompt:14,pointer:10,marker:14
   --layout reverse-list
   --margin 10%,0,0,0
-  --marker "✓"
+  --marker '◆'
   --no-bold
   --no-info
-  --pointer "»"
-  --prompt " "
+  --pointer '►'
+  --prompt '●• '
   --tabstop 2
-'
+"
 
-local function current_dir() { 
+local function current_dir() {
   echo %F{6}%3~
 }
 
