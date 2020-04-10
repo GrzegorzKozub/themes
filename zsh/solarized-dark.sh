@@ -34,8 +34,8 @@ MY_PROMPT_AWS_COLOR_DEV=2
 # fzf
 
 FZF_DEFAULT_OPTS="
-  --color dark,bg+:-1,fg:14,fg+:10,hl:13,hl+:13
-  --color spinner:15,info:15,prompt:14,pointer:10,marker:14
+  --color dark,bg+:-1,fg:10,fg+:14,hl:13,hl+:13
+  --color spinner:8,info:8,prompt:10,pointer:14,marker:10
   --layout reverse-list
   --margin 10%,0,0,0
   --marker '◆'
