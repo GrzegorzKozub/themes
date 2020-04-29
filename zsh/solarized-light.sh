@@ -43,10 +43,10 @@ FZF_DEFAULT_OPTS="
   --color spinner:-1,info:-1,prompt:13,pointer:${MY_PROMPT_CHAR_COLOR_COMMAND},marker:${MY_PROMPT_CHAR_COLOR_COMMAND}
   --layout reverse-list
   --margin 10%,0,0,0
-  --marker '◆'
+  --marker '•'
   --no-bold
   --no-info
-  --pointer '►'
+  --pointer '●'
   --prompt '${MY_PROMPT_CHAR} '
   --tabstop 2
 "
