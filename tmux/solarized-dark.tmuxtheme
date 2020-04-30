@@ -1,23 +1,6 @@
-set -g pane-border-style fg=colour0
-set -g pane-active-border-style fg=colour0
-
-set -g display-panes-colour colour0
-set -g display-panes-active-colour colour13
-
-setw -g window-status-style fg=colour10,bg=default
-setw -g window-status-current-style fg=colour11,bg=default
-setw -g window-status-format "#I:#W"
-setw -g window-status-current-format "#I:#W"
-setw -g window-status-separator " "
-
-set -g status-style fg=colour10,bg=default
-set -g status-left-length 64
-set -g status-left "#[fg=colour8,#{?client_prefix,bg=colour13,bg=colour11}] #S #[#{?client_prefix,fg=colour13,fg=colour11},bg=colour10]#[fg=colour8,bg=colour10] #I:#P #[fg=colour10,bg=default] "
-set -g status-right-length 24
-
-set -g status-right "#[fg=colour10,bg=default] #[fg=colour8,bg=colour10] %e %b #[fg=colour11]#[fg=colour8,bg=colour11] %H:%M "
-
-set -g message-style fg=colour14,bg=default
-set -g message-command-style fg=colour10,bg=default
-
-set -g mode-style fg=colour14,bg=colour0
+MY_COLOR_WATERMARK='colour0'
+MY_COLOR_LIGHT='colour10'
+MY_COLOR_DARK='colour14'
+MY_COLOR_PREFIX='colour4'
+MY_COLOR_WARNING='colour3'
+MY_COLOR_ERROR='colour9'
