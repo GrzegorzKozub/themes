@@ -38,15 +38,11 @@ MY_PROMPT_VERSION_COLOR=0
 
 # fzf
 
-FZF_DEFAULT_OPTS="
-  --color dark,bg+:-1,fg:10,fg+:-1,hl:13,hl+:13
-  --color spinner:-1,info:-1,prompt:13,pointer:${MY_PROMPT_CHAR_COLOR_COMMAND},marker:${MY_PROMPT_CHAR_COLOR_COMMAND}
-  --layout reverse-list
-  --margin 10%,0,0,0
-  --marker '•'
-  --no-bold
-  --no-info
-  --pointer '●'
-  --prompt '${MY_PROMPT_CHAR} '
-  --tabstop 2
-"
+MY_FZF_COLOR_LIGHT=10
+MY_FZF_COLOR_DARK=12
+MY_FZF_COLOR_ACCENT=13
+
+MY_FZF_CHAR_PROMPT='●• '
+MY_FZF_CHAR_POINTER='●'
+MY_FZF_CHAR_MARKER='•'
+
