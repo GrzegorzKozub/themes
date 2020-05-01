@@ -1,6 +1,9 @@
 MY_COLOR_WATERMARK='colour0'
 MY_COLOR_LIGHT='colour10'
 MY_COLOR_DARK='colour14'
-MY_COLOR_PREFIX='colour4'
+
 MY_COLOR_WARNING='colour3'
 MY_COLOR_ERROR='colour9'
+MY_COLOR_PREFIX='colour3'
+
+MY_CHAR_PREFIX='●•'
