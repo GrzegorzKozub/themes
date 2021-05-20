@@ -1,0 +1,72 @@
+https://ethanschoonover.com/solarized
+
+solarized-light
+
+alacritty foreground          #586e75 base01
+vim normal                    #586e75 base01
+tmux dark (messages)          #586e75 base01
+
+alacritty cursor              #839496 base0
+fzf dark (dots)               #839496 base0
+zsh command                   #839496 base0
+
+alarcitty search foreground   #93a1a1 base1
+fzf light (list)              #93a1a1 base1
+vim comment                   #93a1a1 base1
+tmux light                    #93a1a1 base1
+
+tmux watermark (lines)        #eee8d5 base2
+
+solarized-dark
+
+alacritty foreground          #93a1a1 base1
+vim normal                    #93a1a1 base1
+tmux dark (messages)          #93a1a1 base1
+
+alacritty cursor              #839496 base0
+fzf dark (dots)               #839496 base0
+zsh command                   #839496 base0
+
+alarcitty search foreground   #586e75 base01
+fzf light (list)              #586e75 base01
+vim comment                   #586e75 base01
+tmux light                    #586e75 base01
+
+tmux watermark (lines)        #073642 base02
+
+https://github.com/morhetz/gruvbox
+
+gruvbox-light
+
+alacritty foreground          #
+vim normal                    #
+tmux dark (messages)          #
+
+alacritty cursor              #
+fzf dark (dots)               #
+vim comment                   #
+zsh command                   #
+
+alarcitty search foreground   #
+fzf light (list)              #
+tmux light                    #
+
+tmux watermark (lines)        #
+
+gruvbox-dark
+
+alacritty foreground          #d5c4a1 fg2
+vim normal                    #d5c4a1 fg2
+tmux dark (messages)          #d5c4a1 fg2
+
+alacritty cursor              #928374 gray
+fzf dark (dots)               #928374 gray
+vim comment                   #928374 gray
+zsh command                   #928374 gray
+
+alarcitty search foreground   #665c54 bg3
+fzf light (list)              #665c54 bg3
+tmux light                    #665c54 bg3
+
+tmux watermark (lines)        #3c3836 bg1
+
