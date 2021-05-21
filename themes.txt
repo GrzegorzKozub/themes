@@ -38,20 +38,20 @@ https://github.com/morhetz/gruvbox
 
 gruvbox-light
 
-alacritty foreground          #
-vim normal                    #
-tmux dark (messages)          #
+alacritty foreground          #504945 fg2
+vim normal                  ! #503836 (no such color in palette)
+tmux dark (messages)        ! #7c6f64 gray
 
-alacritty cursor              #
-fzf dark (dots)               #
-vim comment                   #
-zsh command                   #
+alacritty cursor              #7c6f64 fg4
+fzf dark (dots)               #7c6f64 gray
+vim comment                 ! #928374 gray
+zsh command                   #7c6f64 gray
 
-alarcitty search foreground   #
-fzf light (list)              #
-tmux light                    #
+alarcitty search foreground ! #a89984 bg4
+fzf light (list)              #928374 gray
+tmux light                    #928374 gray
 
-tmux watermark (lines)        #
+tmux watermark (lines)        #fbf1c7 bg
 
 gruvbox-dark
 
