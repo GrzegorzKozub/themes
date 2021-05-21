@@ -2,71 +2,31 @@ https://ethanschoonover.com/solarized
 
 solarized-light
 
-alacritty foreground          #586e75 base01
-vim normal                    #586e75 base01
-tmux dark (messages)          #586e75 base01
-
-alacritty cursor              #839496 base0
-fzf dark (dots)               #839496 base0
-zsh command                   #839496 base0
-
-alarcitty search foreground   #93a1a1 base1
-fzf light (list)              #93a1a1 base1
-vim comment                   #93a1a1 base1
-tmux light                    #93a1a1 base1
-
-tmux watermark (lines)        #eee8d5 base2
+alacritty foreground, vim normal, tmux dark             #586e75 base01
+alacritty cursor, fzf dark, zsh command                 #839496 base0
+alarcitty search, fzf light, vim comment, tmux light    #93a1a1 base1
+tmux watermark                                          #eee8d5 base2
 
 solarized-dark
 
-alacritty foreground          #93a1a1 base1
-vim normal                    #93a1a1 base1
-tmux dark (messages)          #93a1a1 base1
-
-alacritty cursor              #839496 base0
-fzf dark (dots)               #839496 base0
-zsh command                   #839496 base0
-
-alarcitty search foreground   #586e75 base01
-fzf light (list)              #586e75 base01
-vim comment                   #586e75 base01
-tmux light                    #586e75 base01
-
-tmux watermark (lines)        #073642 base02
+alacritty foreground, vim normal, tmux dark             #93a1a1 base1
+alacritty cursor, fzf dark, zsh command                 #839496 base0
+alarcitty search, fzf light, vim comment, tmux light    #586e75 base01
+tmux watermark                                          #073642 base02
 
 https://github.com/morhetz/gruvbox
 
 gruvbox-light
 
-alacritty foreground          #504945 fg2
-vim normal                  ! #503836 (no such color in palette)
-tmux dark (messages)        ! #7c6f64 gray
-
-alacritty cursor              #7c6f64 fg4
-fzf dark (dots)               #7c6f64 gray
-vim comment                 ! #928374 gray
-zsh command                   #7c6f64 gray
-
-alarcitty search foreground ! #a89984 bg4
-fzf light (list)              #928374 gray
-tmux light                    #928374 gray
-
-tmux watermark (lines)        #fbf1c7 bg
+alacritty foreground, vim normal, tmux dark             #504945 fg2
+alacritty cursor, fzf dark, zsh command                 #928374 gray
+alarcitty search, fzf light, vim comment, tmux light    #bdae93 bg3
+tmux watermark                                          #ebdbb2 bg1
 
 gruvbox-dark
 
-alacritty foreground          #d5c4a1 fg2
-vim normal                    #d5c4a1 fg2
-tmux dark (messages)          #d5c4a1 fg2
-
-alacritty cursor              #928374 gray
-fzf dark (dots)               #928374 gray
-vim comment                   #928374 gray
-zsh command                   #928374 gray
-
-alarcitty search foreground   #665c54 bg3
-fzf light (list)              #665c54 bg3
-tmux light                    #665c54 bg3
-
-tmux watermark (lines)        #3c3836 bg1
+alacritty foreground, vim normal, tmux dark             #d5c4a1 fg2
+alacritty cursor, fzf dark, zsh command                 #928374 gray
+alarcitty search, fzf light, vim comment, tmux light    #665c54 bg3
+tmux watermark                                          #3c3836 bg1
 
