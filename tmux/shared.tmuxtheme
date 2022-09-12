@@ -4,9 +4,9 @@ set -g @batt_color_status_primary_charged $MY_COLOR_WATERMARK
 set -g @batt_color_status_primary_charging $MY_COLOR_WATERMARK
 
 set -g @batt_color_charge_primary_tier8 $MY_COLOR_LIGHT
-set -g @batt_color_charge_primary_tier7 $MY_COLOR_LIGHT 
-set -g @batt_color_charge_primary_tier6 $MY_COLOR_LIGHT 
-set -g @batt_color_charge_primary_tier5 $MY_COLOR_LIGHT 
+set -g @batt_color_charge_primary_tier7 $MY_COLOR_LIGHT
+set -g @batt_color_charge_primary_tier6 $MY_COLOR_LIGHT
+set -g @batt_color_charge_primary_tier5 $MY_COLOR_LIGHT
 set -g @batt_color_charge_primary_tier4 $MY_COLOR_WARNING
 set -g @batt_color_charge_primary_tier3 $MY_COLOR_WARNING
 set -g @batt_color_charge_primary_tier2 $MY_COLOR_ERROR
@@ -25,7 +25,7 @@ set -g @sysstat_cpu_color_medium $MY_COLOR_WARNING
 set -g @sysstat_cpu_color_stress $MY_COLOR_ERROR
 
 set -g @sysstat_mem_color_low $MY_COLOR_LIGHT
-set -g @sysstat_mem_color_medium $MY_COLOR_WARNING 
+set -g @sysstat_mem_color_medium $MY_COLOR_WARNING
 set -g @sysstat_mem_color_stress $MY_COLOR_ERROR
 
 set -g @sysstat_cpu_view_tmpl '#[fg=#{cpu.color}]#{cpu.pused}#[default]'
@@ -55,3 +55,7 @@ set -g message-command-style fg=$MY_COLOR_LIGHT,bg=default
 set -g message-style fg=$MY_COLOR_DARK,bg=default
 
 set -g mode-style fg=$MY_COLOR_DARK,bg=$MY_COLOR_WATERMARK
+
+set -g copy-mode-match-style fg=$MY_COLOR_SEARCH_FG,bg=$MY_COLOR_SEARCH_BG
+set -g copy-mode-current-match-style fg=$MY_COLOR_SEARCH_FG,bg=$MY_COLOR_SEARCH_BG
+
