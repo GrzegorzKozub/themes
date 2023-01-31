@@ -2,6 +2,7 @@
 
 set -g @batt_color_status_primary_charged $MY_COLOR_WATERMARK
 set -g @batt_color_status_primary_charging $MY_COLOR_WATERMARK
+set -g @batt_color_status_primary_unknown $MY_COLOR_WATERMARK
 
 set -g @batt_color_charge_primary_tier8 $MY_COLOR_LIGHT
 set -g @batt_color_charge_primary_tier7 $MY_COLOR_LIGHT
@@ -49,7 +50,7 @@ set -g status-style fg=$MY_COLOR_LIGHT,bg=default
 set -g status-left-length 64
 set -g status-left "#[#{?client_prefix,fg=$MY_COLOR_PREFIX,fg=$MY_COLOR_LIGHT}]$MY_CHAR_PREFIX #[fg=$MY_COLOR_LIGHT]#S #I:#P "
 set -g status-right-length 24
-set -g status-right "#{sysstat_cpu} #{sysstat_mem}#{?#{battery_percentage}, ,}#{battery_color_fg}#[bg=default]#{battery_percentage}"
+set -g status-right "#{sysstat_cpu} #{sysstat_mem}#{?#{==:#{battery_percentage},0%},, #{battery_color_fg}#[bg=default]#{battery_percentage}}"
 
 set -g message-command-style fg=$MY_COLOR_LIGHT,bg=default
 set -g message-style fg=$MY_COLOR_DARK,bg=default
